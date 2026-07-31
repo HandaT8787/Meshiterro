@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit, :update], path_names: {new: 'sign_up'}
   resource :session
   resources :passwords, param: :token
+  resource :map, only: [:show]
   root to: "homes#top"
 
   get 'about' => 'homes#about'
